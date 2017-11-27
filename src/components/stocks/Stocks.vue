@@ -1,6 +1,6 @@
 <template>
     <div>
-        <app-stock v-for="stock in stocks" v-bind:key="stock.id"></app-stock>
+        <app-stock v-for="stock in stocks" v-bind:key="stock.id" v-bind:stock="stock"></app-stock>
     </div>
 </template>
 

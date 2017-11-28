@@ -52,7 +52,7 @@ module.exports = {
         ]
       }
     ],
-    'no-shadow': ["error", { "allow": ["state"] }],
-    'no-console': ["error", { 'allow': ["log"] }]
+    'no-shadow': ['error', { 'allow': ['state'] }],
+    'no-console': ['error', { 'allow': ['log'] }]
   }
 };

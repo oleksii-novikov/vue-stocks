@@ -38,18 +38,18 @@ module.exports = {
     'no-param-reassign': [
       'error',
       {
-        'props': true,
-        'ignorePropertyModificationsFor': [
-          'state',
-          'acc',
-          'e',
-          'ctx',
-          'req',
-          'request',
-          'res',
-          'response',
-          '$scope'
-        ]
+        'props': false,
+        // 'ignorePropertyModificationsFor': [
+        //   'state',
+        //   'acc',
+        //   'e',
+        //   'ctx',
+        //   'req',
+        //   'request',
+        //   'res',
+        //   'response',
+        //   '$scope'
+        // ]
       }
     ],
     'no-shadow': ['error', { 'allow': ['state'] }],

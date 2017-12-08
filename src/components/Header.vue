@@ -9,7 +9,7 @@
                     <router-link to="/portfolio" activeClass="active" tag="li"><a>Portfolio</a></router-link>
                     <router-link to="/stocks" activeClass="active" tag="li"><a>Stocks</a></router-link>
                     <router-link to="/login" activeClass="active" tag="li" v-if="!isLoggedIn"><a>Login</a></router-link>
-                    <router-link to="#" @click="logoutMethod" v-if="isLoggedIn"><a>Login</a></router-link>
+                    <li v-if="isLoggedIn"><a href="#" @click="logoutMethod">Logout</a></li>
                 </ul>
                 <strong class="navbar-text navbar-right">Funds: {{ funds | currency }} </strong>
                 <ul class="nav navbar-nav navbar-right">
@@ -56,7 +56,7 @@
         ...mapActions({
           randomizeStocks: 'randomizeStocks',
           fetchData: 'loadData',
-          logoutMethod: 'logaut',
+          logoutMethod: 'logout',
         }),
         endDay() {
           this.randomizeStocks();

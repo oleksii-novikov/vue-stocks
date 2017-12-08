@@ -24,7 +24,7 @@
                                 aria-haspopup="true"
                                 aria-expanded="false">Save & Load <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Save Data</a></li>
+                            <li><a href="#" @click="saveData">Save Data</a></li>
                             <li><a href="#">Load Data</a></li>
                         </ul>
                     </li>
@@ -36,6 +36,7 @@
 
 <script>
     import { mapActions } from 'vuex';
+    import http from './../http-common';
 
     export default {
       data() {
@@ -54,6 +55,14 @@
         ]),
         endDay() {
           this.randomizeStocks();
+        },
+        saveData() {
+          const data = {
+            funds: this.$store.getters.funds,
+            stockPortfolio: this.$store.getters.stockPortfolio,
+            stocks: this.$store.getters.stocks,
+          };
+          http.put('data.json', data);
         },
       },
     };

@@ -46,6 +46,9 @@
           isDropdownOpen: false,
         };
       },
+      beforeMount() {
+        this.fetchData();
+      },
       computed: {
         ...mapGetters([
           'funds',

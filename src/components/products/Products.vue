@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex';
+  import { mapActions, mapGetters } from 'vuex';
   import Product from './Product';
 
   export default {
@@ -16,14 +16,14 @@
       appProduct: Product,
     },
     methods: {
-      ...mapActions([
+      ...mapActions('products', [
         'fetchProducts',
       ]),
     },
     computed: {
-      products() {
-        return this.$store.getters.products;
-      },
+      ...mapGetters('products', [
+        'products',
+      ]),
     },
   };
 </script>

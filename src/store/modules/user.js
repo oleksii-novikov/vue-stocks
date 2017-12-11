@@ -31,6 +31,7 @@ const actions = {
   },
   logout({ commit }) {
     localStorage.removeItem('token');
+    //  TODO set initial state
     commit('SET_PORTFOLIO', { funds: 0, stocks: [] });
     commit(LOGOUT);
   },
